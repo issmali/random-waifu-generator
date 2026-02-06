@@ -28,6 +28,7 @@ const elements = {
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded!');
     initializeEventListeners();
     startFloatingHearts();
 });
@@ -43,12 +44,14 @@ function initializeEventListeners() {
     });
 
     // Category selection buttons
-    document.querySelectorAll('.category-btn').forEach(btn => {
+    elements.categoryBtns.forEach(btn => {
         btn.addEventListener('click', handleCategorySelect);
     });
 
     // Generate button
-    elements.generateBtn.addEventListener('click', generateWaifu);
+    if (elements.generateBtn) {
+        elements.generateBtn.addEventListener('click', generateWaifu);
+    }
 }
 
 // ==========================================
@@ -85,7 +88,7 @@ function toggleCategoryGrid(type) {
 
 function resetActiveCategory(container) {
     // Remove active from all
-    document.querySelectorAll('.category-btn').forEach(b => {
+    elements.categoryBtns.forEach(b => {
         b.classList.remove('active');
     });
     
@@ -158,7 +161,7 @@ function displayImage(url) {
              class="waifu-image" 
              id="waifuImage">
         <div class="image-info">
-            Kategori: ${state.currentCategory.toUpperCase()} | 
+            Category: ${state.currentCategory.toUpperCase()} | 
             Type: ${state.currentType.toUpperCase()}
         </div>
         <a href="${url}" 
@@ -174,14 +177,16 @@ function displayImage(url) {
     
     // Handle image load
     const img = document.getElementById('waifuImage');
-    img.onload = () => {
-        img.classList.add('loaded');
-        showDownloadButton();
-    };
-    
-    img.onerror = () => {
-        showError('Failed to load image. Please try again.');
-    };
+    if (img) {
+        img.onload = () => {
+            img.classList.add('loaded');
+            showDownloadButton();
+        };
+        
+        img.onerror = () => {
+            showError('Failed to load image. Please try again.');
+        };
+    }
 }
 
 function showDownloadButton() {
