@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Random Waifu Generator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+
+    <div class="container">
+        <h1>✨ Random Waifu Generator</h1>
+        <p class="subtitle">Find your favorite anime waifu randomly!</p>
+
+        <div class="controls">
+            <div class="type-toggle">
+                <button class="type-btn active" data-type="sfw">Safe For Work</button>
+                <button class="type-btn" data-type="nsfw">NSFW (18+)</button>
+            </div>
+
+            <div class="category-grid" id="sfwCategories">
+                <button class="category-btn active" data-cat="waifu">Waifu</button>
+                <button class="category-btn" data-cat="neko">Neko</button>
+                <button class="category-btn" data-cat="shinobu">Shinobu</button>
+                <button class="category-btn" data-cat="megumin">Megumin</button>
+                <button class="category-btn" data-cat="bully">Bully</button>
+                <button class="category-btn" data-cat="cuddle">Cuddle</button>
+                <button class="category-btn" data-cat="cry">Cry</button>
+                <button class="category-btn" data-cat="hug">Hug</button>
+                <button class="category-btn" data-cat="awoo">Awoo</button>
+                <button class="category-btn" data-cat="kiss">Kiss</button>
+                <button class="category-btn" data-cat="lick">Lick</button>
+                <button class="category-btn" data-cat="pat">Pat</button>
+                <button class="category-btn" data-cat="smug">Smug</button>
+                <button class="category-btn" data-cat="bonk">Bonk</button>
+                <button class="category-btn" data-cat="yeet">Yeet</button>
+                <button class="category-btn" data-cat="blush">Blush</button>
+                <button class="category-btn" data-cat="smile">Smile</button>
+                <button class="category-btn" data-cat="wave">Wave</button>
+                <button class="category-btn" data-cat="highfive">Highfive</button>
+                <button class="category-btn" data-cat="handhold">Handhold</button>
+                <button class="category-btn" data-cat="nom">Nom</button>
+                <button class="category-btn" data-cat="bite">Bite</button>
+                <button class="category-btn" data-cat="glomp">Glomp</button>
+                <button class="category-btn" data-cat="slap">Slap</button>
+                <button class="category-btn" data-cat="kill">Kill</button>
+                <button class="category-btn" data-cat="kick">Kick</button>
+                <button class="category-btn" data-cat="happy">Happy</button>
+                <button class="category-btn" data-cat="wink">Wink</button>
+                <button class="category-btn" data-cat="poke">Poke</button>
+                <button class="category-btn" data-cat="dance">Dance</button>
+                <button class="category-btn" data-cat="cringe">Cringe</button>
+            </div>
+
+            <div class="category-grid" id="nsfwCategories" style="display: none;">
+                <button class="category-btn active" data-cat="waifu">Waifu</button>
+                <button class="category-btn" data-cat="neko">Neko</button>
+                <button class="category-btn" data-cat="trap">Trap</button>
+                <button class="category-btn" data-cat="blowjob">Blowjob</button>
+            </div>
+
+            <button class="generate-btn" id="generateBtn">
+                <span>🎲 Generate Waifu</span>
+            </button>
+            
+            <div class="error-message" id="errorMessage"></div>
+        </div>
+
+        <div class="image-container" id="imageContainer">
+            <div class="placeholder">
+                <div class="placeholder-icon">🎭</div>
+                <p>Click the Generate button to see the waifu!</p>
+            </div>
+        </div>
+
+        <div class="history">
+            <h3>📜 History</h3>
+            <div class="history-grid" id="historyGrid">
+                <p style="color: rgba(255,255,255,0.5); grid-column: 1/-1;">There is no history yet</p>
+            </div>
+        </div>
+
+        <!-- Credits Section -->
+        <div class="credits">
+            <h3>🙏 Credits & Attribution</h3>
+            <div class="credits-grid">
+                <div class="credit-card">
+                    <h4>🖼️ API Provider</h4>
+                    <p>Powered by <a href="https://waifu.pics" target="_blank">waifu.pics</a> - Free anime image API with extensive collection of SFW and NSFW content.</p>
+                </div>
+                
+                <div class="credit-card">
+                    <h4>💻 Developer</h4>
+                    <p>Created with ❤️ by <a href="https://github.com/issmalie" target="_blank">Hanif</a>. Open source project for anime enthusiasts.</p>
+                </div>
+                
+                <div class="credit-card">
+                    <h4>🎨 Design</h4>
+                    <p>Modern glassmorphism UI with gradient backgrounds, floating animations, and responsive layout.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">Vanilla JS</span>
+                    </div>
+                </div>
+                
+                <div class="credit-card">
+                    <h4>⚡ Features</h4>
+                    <p>30+ categories, history system, download support, mobile responsive, and smooth animations.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 Random Waifu Generator | <a href="https://github.com/issmali/random-waifu-generator" target="_blank">GitHub Repository</a></p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
